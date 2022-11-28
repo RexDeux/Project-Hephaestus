@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="main-content">
+    <div class="content-header">
+      <div class="header-text"><h1>Artigos disponiveis</h1></div>
+      <div class="search-bar">
+      <%= form_tag items_path, method: :get do %>
+        <%= text_field_tag :query,
+        params[:query],
+        class: "search-input",
+        placeholder: "Procure um artigo"
+        %>
+        <%= submit_tag "Search", class: "btn-search" %>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>
