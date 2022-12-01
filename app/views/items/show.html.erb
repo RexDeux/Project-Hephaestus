@@ -1,0 +1,30 @@
+<div class="show-container">
+  <div class = "show-main-content">
+      <%= link_to items_path do %>
+        <button class="effect effect-5" href="#" title="Back">Back</button>
+      <% end %>
+    <div class = "show-item">
+      <div class="item-section1">
+        <div class = "item-image"><%= image_tag("#{@item.image_url}") %></div>
+        <div class = "item-textbox">
+          <h1><%= @item.item_name %></h1>
+          <p><%= @item.description %></p>
+          <hr>
+          <div class="stock_price">
+            <p><%= number_with_precision(@item.price, :precision => 2)%>€</p>
+            <% if @item.quantity.to_i == 0 %>
+              <p><%= "Sorry we do not have this item in stock" %></p>
+              <% else %>
+                <p><%=  "#{@item.quantity} left in stock"%></p>
+              <% end %>
+          </div>
+          <div class="buy-button">
+            <%= link_to new_item_path(@item) do  %>
+            <%# <div type="button" class="btn btn-primary"> Buy </div> %>
+            <button class="purch-btn draw-border">Purchase</button>
+            <%# <% <div class="btn draw-border">Draw Border</div> %>
+            <% end %>
+          </div>
+        </div>
+  </div>
+</div>

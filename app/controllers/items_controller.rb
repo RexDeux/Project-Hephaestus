@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_items, only: %i[show edit update destroy]
+  before_action :set_item, only: %i[show edit update destroy]
 
   def home
   end
@@ -10,6 +10,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @item = Item.find(params[:id])
   end
 
   def new
@@ -17,6 +18,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    authorize @item
   end
 
   def create
@@ -26,8 +28,7 @@ class ItemsController < ApplicationController
         format.html { redirect_to @item, notice: 'item was successfully created.' }
         format.json { render :show, status: :created, location: @item }
       else
-        format.html { render :new }
-        format.json { render json: @item.errors, status: :unprocessable_entity }
+       render :new
       end
     end
   end
@@ -54,10 +55,10 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:item_name, :price, :photo, :description, :quantity)
+    params.require(:item).permit(:item_name, :prices, :description, :quantity)
   end
 
   def set_item
-    @item = item.find(params[:id])
+    @item = Item.find(params[:id])
   end
 end
