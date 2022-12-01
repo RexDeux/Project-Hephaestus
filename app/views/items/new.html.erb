@@ -1,10 +1,23 @@
-<h1>Adicione um artigo para venda</h1>
-
-<%= simple_form_for @item do |f| %>
-  <%= f.input :item_name, required: true, placeholder: "Nome do artigo" %>
-  <%= f.input :description, required: true, placeholder: "Descrição do artigo" %>
-  <%= f.input :price, required: true %>
-  <%= f.input :quantity, required: true %>
-  <%= f.input :photo, as: :file, required: true %>
-  <%= f.submit "Submit item", class: "btn btn-primary" %>
-<% end %>
+<div class="new-container">
+  <div class="new-main-content" >
+    <div class="new-form">
+      <div class="new-header">
+      <h2>List an Item</h2>
+      </div>
+    <h1>Adicione um artigo para venda</h1>
+      <%= simple_form_for @item do |f| %>
+        <%= f.input :item_name, required: true, placeholder: "Nome do artigo" %>
+        <%= f.input :description, required: true, placeholder: "Descrição do artigo" %>
+        <%= f.input :price, required: true %>
+        <%= f.input :quantity, required: true %>
+        <%= f.input :photo, as: :file, required: true %>
+        <button type="button" class="signup-btn">
+        <%= f.submit "Submit item", class: "btn btn-primary" %>
+        </button>
+      <% end %>
+      <div class="dashboard-link">
+        <%= link_to("Página Principal", dashboard_path) %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="new-container">
+  <div class="new-main-content" >
+    <div class="new-form">
+      <div class="new-header">
+      <h2>Edit Your Listing</h2>
+      </div>
+      <%= simple_form_for @item do |f| %>
+        <%= f.input :item_name, required: true, placeholder: "Item name" %>
+        <%= f.input :description, required: true, placeholder: "Item description" %>
+        <%= f.input :price, required: true %>
+        <%= f.input :quantity, required: true %>
+        <%= f.input :photo, as: :file, required: true %>
+        <%# <%= f.submit "Submit item", class: "btn btn-primary" %>
+        <button type="button" class="signup-btn">
+          <%= f.button :submit, "Update Listing"%>
+        </button>
+      <% end %>
+      <div class="dashboard-link">
+        <%= link_to("My Dashboard", dashboard_path) %>
+      </div>
+    </div>
+  </div>
+</div>
+<%#<%= link_to 'Edit', edit_transaction_path(@transaction) %>
+<%#<%= link_to 'Back', transactions_path(@transaction) %>
