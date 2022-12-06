@@ -1,0 +1,180 @@
+@import "config/colors";
+
+.show-container {
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  max-width: 900px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.show-main-content {
+  margin-top: 30px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding-top: 5px;
+  border-radius: 5px;
+  margin-bottom: 250px;
+  width: 100%;
+}
+
+hr {
+  margin: 5px 0px 0px 0px;
+}
+.stock_price {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 0px;
+  margin-bottom: 5px;
+  padding: 6px;
+  font-size: 18px;
+}
+
+.item-section1 {
+  width:100%;
+  display:flex;
+  flex-wrap: wrap;
+}
+
+.buy-button {
+  width: 100%;
+  padding-left: 10px;
+}
+
+.show-item {
+  // margin-top: 30px;
+  overflow: hidden;
+  // max-width: 1000px;
+  width: 100%;
+  // background: white;
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: left;
+  justify-content: space-between;
+  flex-direction: column;
+  // margin: 0 auto;
+  // min-height: 500px;
+  padding: 5px 25px 25px 25px;
+}
+
+.item-image {
+  width: 50%;
+  // object-fit: cover;
+  border-radius: 5px;
+}
+
+.item-image img {
+  width: 100%;
+}
+
+.item-textbox h1 {
+  font-size: 26px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.item-textbox p {
+  font-size: 14px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 15;
+  margin-top: 15px;
+}
+
+.item-textbox {
+  padding: 15px 10px 5px 10px;
+  width:50%;
+  min-width: 300px;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 100px) and (max-width: 575px) {
+  .show-container {
+    width: 96%;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .show-container {
+    width: 92%;
+  }
+}
+
+
+@media (max-width: 760px) {
+  .item-image {
+    width: 70%;
+    margin: auto;
+  }
+  .buy-button {
+    padding-left: 0px;
+  }
+}
+
+#ownersfunctions {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+// back button effect
+$button-bg-5: #F28123;
+$overlay-color: #fff;
+$link-text-color: black;
+$changed: rgba(0, 0, 0, 0.578);
+$border-radius: 6px;
+
+.effect {
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  color: $link-text-color;
+  text-transform: capitalize;
+  background-color: white;
+  /* background-color: - add your own background-color */
+  font: {
+    family: 'Roboto', sans-serif; /* put your font-family */
+    size: 12px;
+  }
+  // padding: 20px 0px;
+  width: 75px;
+  border: none;
+  // border-radius: $border-radius;
+  overflow: hidden;
+}
+
+.effect.effect-5 {
+  transition: all 0.2s linear 0s;
+
+  &:before {
+    content: "\f104";
+    font-family: FontAwesome;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0px;
+    height: 100%;
+    width: 25px;
+    background-color: rgba($overlay-color,0.3);
+    border-radius: 0 50% 50% 0;
+    transform: scale(0,1);
+    transform-origin: right center;
+    transition: all 0.2s linear 0s;
+  }
+
+   &:hover {
+    text-indent: 10px;
+    color: $changed;
+
+    &:before {
+      transform: scale(1,1);
+      text-indent: 20px;
+    }
+  }
+}
