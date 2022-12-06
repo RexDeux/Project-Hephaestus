@@ -5,7 +5,7 @@
       <% end %>
     <div class = "show-item">
       <div class="item-section1">
-        <div class = "item-image"><%= image_tag("#{@item.image_url}") %></div>
+        <div class = "item-image"><%= image_tag @item.image_url if @item.image %></div>
         <div class = "item-textbox">
           <h1><%= @item.item_name %></h1>
           <p><%= @item.description %></p>
