@@ -10,7 +10,7 @@
       <% @items.each do |item| %>
         <%= link_to item_path(item) do %>
           <div class="card-trip">
-            <%= cl_image_tag item.photo.key.to_s %>
+            <%= cl_image_tag item.image.key.to_s %>
             <div class="card-trip-infos">
               <div>
                 <h2><%=truncate(item.item_name, length: 28)%></h2>

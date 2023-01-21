@@ -1,5 +1,4 @@
 class Item < ApplicationRecord
-  include ImageUploader::Attachment(:image)
-  has_one_attached :photo
+  has_one_attached :image
   validates :item_name, presence: true
 end
