@@ -43,6 +43,7 @@ gem 'image_processing', '~> 1.2'
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 gem 'simple_form'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 

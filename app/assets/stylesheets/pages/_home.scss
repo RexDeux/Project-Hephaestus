@@ -1,0 +1,268 @@
+.body-home-div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+// content inside the blob
+.content-text-home-landing-parent{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+
+  height: 100vh;
+  width: 95%; //making the width for the div
+  padding-bottom: 70px ;
+
+  z-index: 5;
+  // color: #fffb32;
+  width: 50%;
+  text-align: center;
+
+  h3{
+    font-size: 2rem;
+    max-width: 450px;
+    margin-bottom: 45px;
+  }
+  p{
+  font-size: 1.4rem;
+  margin-bottom: 45px;
+  }
+  a{
+    padding: 4px 18px;
+
+    color: white ;
+    font-size: 20px;
+    background-color: gold-light;
+    border: 1px solid gold-light ;
+    border-radius: 15px;
+    text-decoration: none;
+
+    transition: var(--transition1);
+  }
+  a:hover{
+  text-decoration: none;
+  border: 1px solid white;
+  background-color: transparent ;
+  color: white ;
+  border-radius: 15px;
+  }
+}
+
+//neon text
+.neonText {
+  color: rgb(255, 240, 228);
+  text-shadow:
+      0 0 5px neon-light,
+      0 0 10px neon-light,
+      0 0 15px neon-light,
+      0 0 25px neon-light
+}
+
+
+// -------------------------------content explicative on the home page -----------------------------///
+// the 3 cards
+.home-explaining-content-parent{ //give the generals values to the div
+  height: 100%;
+  width: 100%;
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .home-explaining-content-child{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 350px;
+    width: 100%;
+  }
+}
+
+.card-explain-home{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  height: 230px;
+  width: 350px;
+  border-radius: 15px;
+
+  text-align: center;
+  background: black-dark;
+  color: white;
+
+  i{
+    font-size: 3rem;
+    color: white ;
+  }
+  h2{
+    font-size: 1.8rem;
+  }
+  h4{
+    font-size: 1.1rem ;
+    font-family: body-font;
+    font-weight: 300;
+    width: 90%;
+  }
+  strong{
+    font-family: 'IBM Plex Sans';
+    font-weight: 900;
+  }
+}
+
+
+.featured-galleries-home-page-h{
+  height: 80px;
+  width: 100%;
+  text-align: center;
+  h1{
+    color: gold-light;
+  }
+}
+.home-feature-nft-main-div{
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  height: 700px;
+  width: 100%;
+}
+.home-feature-nft-parent-div{
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  width: 250px;
+  height: 665px;
+  margin: 0 25px;
+
+  background: linear-gradient(335deg, black-b, black-light);
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(208,166,91, 0.3);
+
+  animation: feature-gallery 30s infinite ease-in-out alternate;
+}
+.home-feature-nft-main-div:hover{
+  animation-play-state: paused;
+}
+@keyframes feature-gallery {
+  0% { transform:translateX(0%); }
+	100% { transform:translateX(-760%); }
+}
+
+.home-feature-image-div{
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  min-width: featureMesure;
+  max-width: featureMesure;
+  max-height: featureMesure;
+  min-height: featureMesure;
+  img{
+    min-width: featureMesure;
+    max-width: featureMesure;
+    max-height: featureMesure;
+    min-height: featureMesure;
+
+    margin: 5px 0;
+    border-radius: 15px;
+  }
+}
+
+.home-feature-content-div{
+  position: absolute;
+  bottom: 0;
+  height: 50px;
+  width: 90%;
+  text-align: center;
+  word-break: break-word;
+  h2{
+    font-size: 1rem
+  }
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .home-explaining-content-child{
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+  }
+    .card-explain-home{
+    margin: 35px;
+    width: 350px;
+    height: 200px;
+    i{
+      font-size:2.6rem;
+    }
+    h2{
+      font-size:1.4rem;
+    }
+  }
+  .featured-galleries-home-page-h{
+    margin-bottom: 30px;
+  }
+  .content-text-home-landing-parent {
+  width: 90%;
+  }
+  .home-feature-nft-parent-div{
+  animation: feature-gallery 30s linear infinite;
+}
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .home-explaining-content-child{
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+  }
+    .card-explain-home{
+    margin: 35px;
+    width: 350px;
+    height: 200px;
+    i{
+      font-size:2.8rem;
+    }
+    h2{
+      font-size:1.6rem;
+    }
+  }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .home-explaining-content-child{
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    padding-bottom: 45px;
+  }
+  .card-explain-home{
+    margin: 35px;
+    width: 330px;
+    height: 220px;
+    i{
+      font-size:2.8rem;
+    }
+    h2{
+      font-size:1.6rem;
+    }
+  }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .home-explaining-content-child{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 350px;
+    width: 100%;
+  }
+  i{
+  font-size: 2.8rem;
+  }
+  h2{
+    font-size:1.6rem;
+  }
+}
