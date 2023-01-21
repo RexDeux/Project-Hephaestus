@@ -1,0 +1,155 @@
+@import "config/colors";
+
+
+.dashboard_container{
+  min-height: 83vh;
+  padding-top: 25px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-text {
+  height: 44px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+.cards {
+   display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  text-decoration: none;
+  margin-top: 20px;
+}
+
+.cards a:hover {
+  text-decoration: none;
+}
+
+.cards a {
+  text-decoration: none;
+}
+
+.main-content {
+  padding-top: 25px;
+  margin-bottom: 40px;
+}
+
+.content-header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.header-text {
+  height: 44px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+
+
+/* Style the submit button */
+// .btn-search {
+//   float: left;
+//   width: 30%;
+//   padding: 10px;
+//   background: #212121;
+//   color: white;
+//   font-size: 14px;
+//   border: 1px solid grey;
+//   border-left: none; /* Prevent double borders */
+//   cursor: pointer;
+//   transition-duration: 0.3s;
+// }
+
+// .btn-search:hover {
+//   background: #6D9886;
+// }
+
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+ .card-trip {
+   overflow: hidden;
+   background: white;
+   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+   border-radius: 8px;
+   transition: transform .3s;
+ }
+
+ .card-trip:hover {
+   transform: scale(1.03);
+ }
+
+ .card-trip a:hover {
+   text-decoration: none;
+ }
+
+ .card-trip > img {
+  height: 200px;
+   width: 100%;
+   object-fit: cover;
+ }
+
+ .card-trip h2 {
+   font-size: 16px;
+   font-weight: bold;
+   margin: 0;
+   text-decoration: none;
+ }
+
+ .card-trip p {
+   font-size: 12px;
+   opacity: .7;
+   margin: 0;
+ }
+
+
+ .card-trip .card-trip-infos {
+   padding: 16px;
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-start;
+   position: relative;
+   text-decoration: none;
+   color: $gray;
+   height: 80px;
+ }
+
+
+ .card-trip-infos .card-trip-pricing {
+   margin-left: 10px;
+ }
