@@ -1,23 +1,26 @@
-<div class="container">
-  <div class="main-content">
-    <div class="content-header">
-      <div class="header-text"><h1>Artigos disponiveis</h1></div>
-      <div class="search-bar">
-      <%= form_tag items_path, method: :get do %>
-        <%= text_field_tag :query,
-        params[:query],
-        class: "search-input",
-        placeholder: "Procure um artigo"
-        %>
-        <%= submit_tag "Search", class: "btn-search" %>
+<div class="dashboard_container container">
+ <div class="content-header">
+    <h1 class="header-text"> À venda: </h1>
+
+    <%# <> <%= link_to "Add item", "#", class: "btn btn-ghost", new_item_path %>
+    <%= link_to new_item_path do %>
+      <button class="content-header" href="#" title="Add Item">Add Item</button>
+    <% end %>
+    <div class="cards">
+      <% @items.each do |item| %>
+        <%= link_to item_path(item) do %>
+          <div class="card-trip">
+            <%=  image_tag(item.image) %>
+            <div class="card-trip-infos">
+              <div>
+                <h2><%=truncate(item.item_name, length: 28)%></h2>
+                <p><%=truncate(item.description, :length =>70)%></p>
+              </div>
+              <h2 class="card-trip-pricing"><%=number_with_precision(item.price, :precision => 2)%>€</h2>
+            </div>
+          </div>
+        <%end%>
       <% end %>
-       <%= link_to new_item_path do %>
-      <button class="btn btn-ghost" href="#" title="Add Item">Add Item</button>
-     <% end %>
-       <%= link_to items_path do %>
-      <button class="btn btn-ghost" href="#" title="Vê Item">Add Item</button>
-     <% end %>
-      </div>
     </div>
   </div>
 </div>

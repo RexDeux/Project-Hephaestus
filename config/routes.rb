@@ -1,12 +1,6 @@
 Rails.application.routes.draw do
-  get 'orders/index'
-  get 'orders/show'
-  get 'orders/new'
-  get 'carts/show'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  #root to: 'items#index'
   root to: 'pages#home'
-  get "dashboard", to: "pages#dashboard"
+
   get 'carts/:id' => "carts#show", as: "cart"
   delete 'carts/:id' => "carts#destroy"
 
@@ -15,11 +9,9 @@ Rails.application.routes.draw do
   post 'line_items' => "line_items#create"
   get 'line_items/:id' => "line_items#show", as: "line_item"
   delete 'line_items/:id' => "line_items#destroy"
-  post 'line_items' => "line_items#create"
 
-  resources :products
-  resources :orders
   resources :items
+  resources :orders
   # Defines the root path route ("/")
   # root "articles#index"
 end
