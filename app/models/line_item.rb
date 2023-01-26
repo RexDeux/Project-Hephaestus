@@ -5,6 +5,6 @@ class LineItem < ApplicationRecord
 
   #calculator
   def total_price
-    self.quantity * self.product.total_price
+    self.quantity * self.item.total_price
   end
 end
