@@ -1,10 +1,5 @@
 class CartsController < ApplicationController
 
-  def create
-    @cart = @current_cart
-    item = Item.find(params[:item_id])
-  end
-
   def show
     @current_cart = Cart.find(params[:id])
   end

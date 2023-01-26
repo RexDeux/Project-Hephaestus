@@ -1,6 +1,6 @@
 <div class="show-container">
   <div class = "show-main-content">
-      <%= link_to items_path do %>
+      <%= link_to dashboard_path do %>
         <button class="effect effect-5" href="#" title="Back">Back</button>
       <% end %>
     <div class = "show-item">
@@ -21,15 +21,7 @@
               <% end %>
           </div>
           <div class="buy-button">
-            <%= link_to new_item_path(@item) do  %>
-              <%# <div type="button" class="btn btn-primary"> Buy </div> %>
-
-              <button class="purch-btn draw-border">
-                <% button_to "Add #{@item.item_name} to cart", line_items_path(:item_id => @item.id) %>
-              </button>
-              <%# <% <div class="btn draw-border">Draw Border</div> %>
-
-            <% end %>
+          <%= button_to "Add to cart", line_items_path(item_id: @item) %>
           </div>
         </div>
   </div>
