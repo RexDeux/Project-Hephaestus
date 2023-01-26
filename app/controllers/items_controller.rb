@@ -1,5 +1,4 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: %i[show edit update destroy]
 
   def home
   end
@@ -18,7 +17,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    authorize @item
+    @item = Item.find(params[:id])
   end
 
   def create
@@ -34,6 +33,7 @@ class ItemsController < ApplicationController
   end
 
   def update
+    @item = Item.find(params[:id])
     respond_to do |format|
       if @item.update(item_params)
         format.html { redirect_to @item, notice: 'item was successfully updated.' }
@@ -46,6 +46,7 @@ class ItemsController < ApplicationController
   end
 
   def destroy
+    @item = Item.find(params[:id])
     @item.destroy
     respond_to do |format|
       format.html { redirect_to items_url, notice: 'item was successfully destroyed.' }
@@ -57,9 +58,5 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:item_name, :price, :image, :description, :quantity)
-  end
-
-  def set_item
-    @item = Item.find(params[:id])
   end
 end

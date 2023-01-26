@@ -1,18 +1,18 @@
 class LineItemsController < ApplicationController
 
   def create
-    chosen_product = Product.find(params[:product_id])
+    chosen_item = Item.find(params[:item_id])
     current_cart = @current_cart
 
-    if current_cart.products.include?(chosen_product)
+    if current_cart.items.include?(chosen_item)
 
-      @line_item = current_cart.line_item.find_by(:product_id => chosen_product)
+      @line_item = current_cart.line_item.find_by(:item_id => chosen_item)
 
       @line_item.quantity += 1
     else
       @line_item = LineItem.new
       @line_item.cart = current_cart
-      @line_item.product = chosen_product
+      @line_item.item = chosen_item
     end
 
     @line_item.save
@@ -26,6 +26,6 @@ class LineItemsController < ApplicationController
   end
   private
   def line_item_params
-    params.require(:line_item).permit(:quantity, :product_id, :cart_id)
+    params.require(:line_item).permit(:quantity, :item_id, :cart_id)
   end
 end

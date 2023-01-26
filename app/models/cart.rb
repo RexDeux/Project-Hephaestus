@@ -1,6 +1,6 @@
 class Cart < ApplicationRecord
   has_many :line_items, dependent: :destroy
-  has_many :products, through: :line_items
+  has_many :items, through: :line_items
 
   #calculator
   def sub_total
@@ -8,6 +8,6 @@ class Cart < ApplicationRecord
     self.line_items.each do |line_item|
       sum += line_item.total_price
     end
-    return sume
+    return sum
   end
 end
