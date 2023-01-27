@@ -1,7 +1,7 @@
 class CartsController < ApplicationController
 
   def show
-    @current_cart = Cart.find(params[:id])
+    @cart = @current_cart
   end
 
   def destroy
