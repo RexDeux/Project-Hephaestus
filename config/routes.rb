@@ -15,4 +15,10 @@ Rails.application.routes.draw do
   resources :orders
   # Defines the root path route ("/")
   # root "articles#index"
+
+  get '/login', to: 'sessions#login'
+  get '/login', to: 'sessions#create'
+  get '/logout', to: 'sessions#destroy'
+  get '/logout', to: 'sessions#destroy'
+
 end
