@@ -1,23 +1,15 @@
-<div class="container">
-  <div class="main-content">
-    <div class="content-header">
-      <div class="header-text"><h1>Artigos disponiveis</h1></div>
-      <div class="search-bar">
-      <%= form_tag items_path, method: :get do %>
-        <%= text_field_tag :query,
-        params[:query],
-        class: "search-input",
-        placeholder: "Procure um artigo"
-        %>
-        <%= submit_tag "Search", class: "btn-search" %>
-      <% end %>
-       <%= link_to new_item_path do %>
-      <button class="btn btn-ghost" href="#" title="Add Item">Add Item</button>
-     <% end %>
-       <%= link_to items_path do %>
-      <button class="btn btn-ghost" href="#" title="Vê Item">Add Item</button>
-     <% end %>
-      </div>
-    </div>
+<h2>All items</h2>
+
+<% @items.each do |item| %>
+  <div class="card-trip">
+    <%=  image_tag(item.image) %>
+    <p>Name: <%= item.item_name %>; unit price of <%= number_to_currency(item.price) %></p>
+    <p>
+      <%= link_to "Edit", edit_item_path(item) %> |
+      <%= link_to "Delete", item_path(item), method: :delete, data: {confirm: "Are you sure?"} %>
+    </p>
   </div>
-</div>
+  <%= button_to "Add #{item.item_name} to cart", line_items_path(:item_id => item.id) %>
+<% end%>
+
+<%= link_to "New item", new_item_path %>

@@ -21,11 +21,7 @@
               <% end %>
           </div>
           <div class="buy-button">
-            <%= link_to new_item_path(@item) do  %>
-            <%# <div type="button" class="btn btn-primary"> Buy </div> %>
-            <button class="purch-btn draw-border">Purchase</button>
-            <%# <% <div class="btn draw-border">Draw Border</div> %>
-            <% end %>
+          <%= button_to "Add to cart", line_items_path(item_id: @item) %>
           </div>
         </div>
   </div>
