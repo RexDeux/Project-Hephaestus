@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   resources :items
   resources :orders
+  resources :users
   # Defines the root path route ("/")
   # root "articles#index"
 
