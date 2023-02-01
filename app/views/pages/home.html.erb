@@ -4,6 +4,11 @@
 
     <div class="content-text-home-landing-parent">
       <h3 class="neonText">Handmade</h3>
-      <p class="fw-light neonText"> Produtos Artesanais com Gosto</p>
+      <p class="fw-light neonText"> Produtos Artesanais com Gosto</p>~
+    <% if logged_in? %>
       <%= link_to "Browse", dashboard_path, class: 'btn btn-flat' %>
+    <% else %>
+      <% %>
+      <%= link_to 'Sign Up', new_user_path %>
+     <% end %>
     </div>
