@@ -6,17 +6,17 @@
       </div>
     <h1>Adicione um artigo para venda</h1>
       <%= simple_form_for @item do |f| %>
-        <%= f.input :item_name, required: true, placeholder: "Nome do artigo" %>
-        <%= f.input :description, required: true, placeholder: "Descrição do artigo" %>
-        <%= f.input :price, required: true %>
-        <%= f.input :quantity, required: true %>
-        <%= f.input :image, as: :file, required: true %>
+        <%= f.input :item_name, placeholder: "Nome do artigo" %>
+        <%= f.input :description, placeholder: "Descrição do artigo" %>
+        <%= f.input :price %>
+        <%= f.input :quantity %>
+        <%= f.input :image, as: :file %>
         <button type="button" class="signup-btn">
         <%= f.submit "Submit item", class: "btn btn-primary" %>
         </button>
       <% end %>
       <div class="dashboard-link">
-        <%= link_to("Página Principal", items_path) %>
+        <%= link_to("Página Principal", dashboard_path) %>
       </div>
     </div>
   </div>

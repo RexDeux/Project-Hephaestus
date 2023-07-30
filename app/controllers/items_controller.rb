@@ -24,10 +24,10 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     respond_to do |format|
       if @item.save
-        format.html { redirect_to @item, notice: 'item was successfully created.' }
+        format.html { redirect_to @item, notice: 'O item foi criado com sucesso.' }
         format.json { render :show, status: :created, location: @item }
       else
-       render :new
+        format.html { redirect_to new_item_path, notice: 'Por favor preencha os campos vazios' }
       end
     end
   end
@@ -36,7 +36,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     respond_to do |format|
       if @item.update(item_params)
-        format.html { redirect_to @item, notice: 'item was successfully updated.' }
+        format.html { redirect_to @item, notice: 'O item foi actualizado.' }
         format.json { render :show, status: :ok, location: @item }
       else
         format.html { render :edit }
@@ -49,7 +49,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @item.destroy
     respond_to do |format|
-      format.html { redirect_to items_url, notice: 'item was successfully destroyed.' }
+      format.html { redirect_to items_url, notice: 'O item foi destruído.' }
       format.json { head :no_content }
     end
   end
