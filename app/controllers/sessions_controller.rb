@@ -9,8 +9,7 @@ class SessionsController < ApplicationController
       redirect_to user_path
     else
 
-      message = 'Ocorreu um erro. Por favor verifique o seu username e password'
-      redirect_to login_path, notice: message
+      redirect_to login_path, notice: I18n.t('user.error')
     end
   end
 end

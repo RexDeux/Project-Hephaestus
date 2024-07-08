@@ -3,7 +3,7 @@
 <% Item.where(id: params[:item_id]).each do |item| %>
   <div class="card-trip">
     <%=  image_tag(item.image) %>
-    <p>Name: <%= item.item_name %>; unit price of <%= number_to_currency(item.price) %></p>
+    <p>Name: <%= item.item_name %>; unit price of <%= number_to_currency(item.price, unit: "€") %></p>
     <p>
       <%= link_to "Edit", edit_item_path(item) %> |
       <%= link_to "Delete", item_path(item), method: :delete, data: {confirm: "Are you sure?"} %>

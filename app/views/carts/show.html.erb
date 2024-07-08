@@ -15,15 +15,19 @@
           <h1><%=item_name = Item.find(line_item.item_id)&.item_name %></h1>
           <p><%= item_descripton = Item.find(line_item.item_id)&.description %></p>
           <hr>
-          Price: <%= number_to_currency(line_item.item.price) %>
-          Quantity: <%= line_item.quantity %>/ Total Price: <%= number_to_currency(line_item.total_price) %>
+          Price: <%= number_to_currency(line_item.item.price, unit: "€") %>
+          Quantity: <%= line_item.quantity %>/ Total Price: <%= number_to_currency(line_item.total_price, unit: "€") %>
           <ul>
             <li>
-              <%= link_to "Add one", line_item_add_path(line_item), method: :post %>
-              <%= link_to "Reduce one", line_item_reduce_path(line_item), method: :post %>
+              <%=  button_to "Add one", line_item_add_url(line_item), method: :post %>
+              <% if line_item.quantity > 1 %>
+                <%=  button_to "Reduce one", line_item_reduce_url(line_item), method: :post %>
+              <% end %>
             </li>
             <li>
-              <%= link_to "Remove item", line_item_path(line_item), method: :delete %>
+              <%= form_for line_item, method: :delete do |f| %>
+                <%= f.submit "Delete Cart" %>
+              <% end %> 
             </li>
           </ul>
           </div>
@@ -31,9 +35,9 @@
       </div>
       </ul>
       <div class="stock_price">
-      Sub total: <%= number_to_currency(@cart.sub_total) %>
+      Sub total: <%= number_to_currency(@cart.sub_total, unit: "€") %>
       </div>  
-      <%= link_to "Proceed to checkout", new_order_path %><br>
+      <%= button_to "Proceed to checkout", new_order_path %><br>
 
       <%= form_for @cart, method: :delete do |f| %>
         <%= f.submit "Delete Cart" %>
