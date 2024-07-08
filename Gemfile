@@ -23,7 +23,7 @@ gem "turbo-rails"
 gem 'sassc-rails'
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
-
+gem "byebug"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 gem 'cloudinary'

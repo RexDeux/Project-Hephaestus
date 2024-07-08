@@ -21,7 +21,8 @@
               <% end %>
           </div>
           <div class="buy-button">
-          <%= button_to "Add to cart", line_items_path(item_id: @item) %>
+          <%= button_to "Add to cart", line_items_path(item_id: @item.id), method: :post %>
+          <%= button_to "See cart", cart_path(@current_cart), method: :get %>
           </div>
         </div>
   </div>

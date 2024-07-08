@@ -1,6 +1,6 @@
 <h2>All items</h2>
 
-<% @items.each do |item| %>
+<% Item.where(id: params[:item_id]).each do |item| %>
   <p>Name: <%= item.item_name %>; unit price of <%= number_to_currency(item.price) %></p>
   <p>
     <%= link_to "Edit", edit_item_path(item) %> |
@@ -9,4 +9,4 @@
   </p>
 <% end%>
 
-<%= link_to "New item", new_item_path
+<%= link_to "New item", dashboard_path %>
