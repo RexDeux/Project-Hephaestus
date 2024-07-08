@@ -16,9 +16,9 @@ Rails.application.routes.draw do
 
   # Resourceful routes
   resources :items
-  resources :orders
+  resources :orders, only: [:index, :show, :create, :new]
   resources :users
-
+  
   # Session routes
   get '/login', to: 'sessions#login'
   post '/login', to: 'sessions#create'  # Changed to POST for login action

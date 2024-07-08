@@ -41,3 +41,15 @@ en:
   
   user:
     error: "There was an error. Please verify your username and password"
+    
+  number:
+      currency:
+        format:
+          unit: "€"
+          separator: "."
+          delimiter: ","
+          format: "%u%n"
+  
+  order:
+    created: 'Order was successfully created'
+    empty_cart: 'Your cart is empty.'

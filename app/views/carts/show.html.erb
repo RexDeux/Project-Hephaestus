@@ -37,7 +37,7 @@
       <div class="stock_price">
       Sub total: <%= number_to_currency(@cart.sub_total, unit: "€") %>
       </div>  
-      <%= button_to "Proceed to checkout", new_order_path %><br>
+      <%= link_to "Proceed to checkout", new_order_path, method: :get %><br>
 
       <%= form_for @cart, method: :delete do |f| %>
         <%= f.submit "Delete Cart" %>
