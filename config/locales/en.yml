@@ -30,4 +30,14 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  item:
+    creation: "Item has been created!"
+    empty_spaces: "Please fill the empty spaces"
+    update: " Item was updated"
+    destruction: "O item foi destroyed."
+    out_of_stock: 'Sorry, this item is out of stock.'
+    added_to_cart: "The Item was successfully added to the cart"
+    error: "There was an issue adding the item to your cart."
+  
+  user:
+    error: "There was an error. Please verify your username and password"

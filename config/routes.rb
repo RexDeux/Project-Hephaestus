@@ -1,26 +1,26 @@
 Rails.application.routes.draw do
   root to: 'pages#home'
-  get "dashboard", to: "pages#dashboard"
 
-  get 'carts/:id' => "carts#show", as: "cart"
-  delete 'carts/:id' => "carts#destroy"
+  # Pages routes
+  get 'dashboard', to: 'pages#dashboard'
 
-  post 'line_items/:id/add' => "line_items#add_quantity", as: "line_item_add"
-  post 'line_items/:id/reduce' => "line_items#reduce_quantity", as: "line_item_reduce"
-  post 'line_items' => "line_items#create"
-  get 'line_items/:id' => "line_items#show", as: "line_item"
-  delete 'line_items/:id' => "line_items#destroy"
+  # Cart routes
+  resources :carts, only: [:show, :destroy]
 
+  # Line item routes
+  post 'line_items/:id/add', to: 'line_items#add_quantity', as: 'line_item_add'
+  post 'line_items/:id/reduce', to: 'line_items#reduce_quantity', as: 'line_item_reduce'
+  post 'line_items/:id/destroy', to: 'line_items#destroy', as: 'line_item_destroy'
+  resources :line_items, only: [:create, :show, :destroy]
+  get 'line_items/:id', to: 'line_items#show', as: 'line_item_show'
+
+  # Resourceful routes
   resources :items
   resources :orders
   resources :users
-  resources :line_items
-  # Defines the root path route ("/")
-  # root "articles#index"
 
+  # Session routes
   get '/login', to: 'sessions#login'
-  get '/login', to: 'sessions#create'
+  post '/login', to: 'sessions#create'  # Changed to POST for login action
   get '/logout', to: 'sessions#destroy'
-  get '/logout', to: 'sessions#destroy'
-
 end
