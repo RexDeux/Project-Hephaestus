@@ -9,6 +9,9 @@
         <% end %>
         <% @cart.line_items.each do |line_item| %>
           <div class = "item-textbox">
+          <div class="item-image">
+              <%= image_tag(line_item.item.image) %>
+          </div>
           <h1><%=item_name = Item.find(line_item.item_id)&.item_name %></h1>
           <p><%= item_descripton = Item.find(line_item.item_id)&.description %></p>
           <hr>
