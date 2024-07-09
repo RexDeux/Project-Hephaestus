@@ -1,12 +1,24 @@
-<h2>All items</h2>
-
-<% Item.where(id: params[:item_id]).each do |item| %>
-  <p>Name: <%= item.item_name %>; unit price of <%= number_to_currency(item.price, unit: "€") %></p>
-  <p>
-    <%= link_to "Edit", edit_item_path(item) %> |
-    <%= link_to "Delete", item_path(item), method: :delete, data: {confirm: "Are you sure?"} %>
-    <%= button_to "Add #{item.item_name} to cart", line_items_path(:item_id => item.id) %>
-  </p>
-<% end%>
-
-<%= link_to "New item", dashboard_path %>
+<div class="show-container">
+  <div class="show-main-content">
+    <%= link_to dashboard_path do %>
+      <button class="effect effect-5" href="#" title="Back">Back</button>
+    <% end %>
+    <div class="show-item">
+    <div class = "item-image">
+        <image src="<%=(url_for(Item.find(params[:item_id]).image)) %>">
+    </div>
+      <h2>All items</h2>
+      <% Item.where(id: params[:item_id]).each do |item| %>
+        <div class="item-section">
+          <p>Name: <%= item.item_name %>; unit price of <%= number_to_currency(item.price, unit: "€") %></p>
+          <p>
+            <%= link_to "Edit", edit_item_path(item), class: "edit-button" %> |
+            <%= link_to "Delete", item_path(item), method: :delete, data: {confirm: "Are you sure?"}, class: "delete-button" %>
+            <%= button_to "Add #{item.item_name} to cart", line_items_path(item_id: item.id), class: "add-to-cart-button" %>
+          </p>
+        </div>
+      <% end %>
+      <%= link_to "New item", dashboard_path, class: "new-item-button" %>
+    </div>
+  </div>
+</div>

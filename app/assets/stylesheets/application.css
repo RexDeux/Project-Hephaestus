@@ -13,3 +13,248 @@
  *= require_tree .
  *= require_self
  */
+
+ /* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f0e1; /* Light golden brown background */
+    margin: 0;
+    padding: 0;
+  }
+  
+  .header {
+    background-color: #57423e; /* Darker golden brown for header */
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+  }
+  
+  .nav-links li a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Landing page styles */
+  .body-home-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    background-color: #f5f0e1; /* Light golden brown background */
+  }
+  
+  .content-text-home-landing-parent {
+    text-align: center;
+    color: #6d564f; /* Brownish text color */
+  }
+  
+  .neonText {
+    font-size: 3rem;
+    color: #b89f8f; /* Light golden brown text */
+    text-shadow: 0 0 10px #f5f0e1, 0 0 20px #f5f0e1, 0 0 30px #f5f0e1, 0 0 40px #b89f8f, 0 0 70px #b89f8f, 0 0 80px #b89f8f, 0 0 100px #b89f8f, 0 0 150px #b89f8f;
+  }
+  
+  .fw-light {
+    font-weight: lighter;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #57423e; /* Darker golden brown button background */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .buy-button {
+    background-color: #d9a066;
+    border: none;
+    color: white;
+    padding: 8px 16px; /* Adjusted padding */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px; /* Adjusted font size */
+    margin: 4px 2px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .buy-button:hover {
+    background-color: #b37740;
+  }
+
+  
+  /* Styles for the button */
+  .btn-remove {
+    background-color: #D9534F;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .btn-remove:hover {
+    background-color: #C9302C;
+    transform: scale(1.05);
+  }
+  
+  .btn-remove:active {
+    background-color: #AC2925;
+    transform: scale(0.95);
+  }
+.header-text {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 36px;
+  font-weight: bold;
+  color: #4A4A4A; /* Dark grey for sophistication */
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+.header-text::before,
+.header-text::after {
+  content: '';
+  position: absolute;
+  top: 20%;
+  width: 20px;
+  height: 2px;
+  background-color: #D4AF37; /* Light golden brown */
+}
+
+.header-text::before {
+  left: -60px;
+}
+
+.header-text::after {
+  right: -60px;
+}
+.cards {
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-left: 20px; /* Adjust this value to push cards to the left */
+}
+
+/* Dashboard Container */
+.dashboard_container {
+  background-color: #f5f0e1;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align items horizontally */
+  justify-content: center; /* Center align items vertically */
+  padding: 20px;
+}
+
+.card-trip_new {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  transition: transform .3s;
+  text-align: center;
+}
+
+.item-textbox_new h1 {
+  font-size: 26px;
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+}
+
+.item-textbox_new p {
+  font-size: 14px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 15;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.item-textbox_new {
+  padding: 15px 10px 5px 10px;
+  width:50%;
+  min-width: 300px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.order-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.form-submit {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.form-submit:hover {
+  background-color: #0056b3;
+}

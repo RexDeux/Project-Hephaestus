@@ -10,9 +10,29 @@
     <%= javascript_importmap_tags %>
     <%= javascript_include_tag "stimulus" %>
 
+    ...
+    <%= javascript_include_tag 'https://js.stripe.com/v3/' %>
+    <script>
+      // Set your Stripe publishable key
+      var stripe = Stripe('your_publishable_key');
+    </script>
+</head>
+</head>
   </head>
 
   <body>
+    <header>
+      <% if current_user %>
+        <%= link_to "Logout", logout_path, method: :get, class: 'btn btn-danger' %>
+        <%= link_to "Dashboard", dashboard_path, method: :get, class: 'btn btn-danger' %>
+        <%= link_to "See cart", cart_path(current_user.cart), method: :get, class: 'btn btn-danger' %>
+        <%= link_to new_item_path, class: 'btn btn-danger' do %>
+      Add Item
+    <% end %>
+      <% else %>
+        <%= link_to "Login", login_path, class: 'btn btn-primary' %>
+      <% end %>
+    </header>
     <%= yield %>
   </body>
 

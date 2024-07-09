@@ -3,7 +3,7 @@
 .show-container {
   display: flex;
   justify-content: center;
-  align-items: left;
+  align-items: center;
   max-width: 900px;
   width: 90%;
   margin: 0 auto;
@@ -41,6 +41,9 @@ hr {
 .buy-button {
   width: 100%;
   padding-left: 10px;
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .show-item {
@@ -51,7 +54,7 @@ hr {
   // background: white;
   // box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
-  align-items: left;
+  align-items: center;
   justify-content: space-between;
   flex-direction: column;
   // margin: 0 auto;
@@ -63,10 +66,15 @@ hr {
   width: 50%;
   // object-fit: cover;
   border-radius: 5px;
+  align-items: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .item-image img {
   width: 100%;
+  
 }
 
 .item-textbox h1 {
