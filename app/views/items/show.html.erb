@@ -3,11 +3,11 @@
       <%= link_to dashboard_path do %>
         <button class="effect effect-5" href="#" title="Back">Back</button>
       <% end %>
-    <div class = "show-item">
       <div class="item-section1">
         <div class = "item-image">
             <image src="<%=(url_for(@item.image)) %>">
         </div>
+    <div class = "show-item">
         <div class = "item-textbox">
           <h1><%= @item.item_name %></h1>
           <p><%= @item.description %></p>
@@ -21,7 +21,7 @@
               <% end %>
           </div>
           <%= link_to "Add to cart", line_items_path(item_id: @item.id), method: :post, class: "buy-button" %>
-          <%= link_to "See cart", cart_path(current_user.cart), method: :get, class: "buy-button" %>
+  <%= link_to "See cart", cart_path(current_user.cart), method: :get, class: "buy-button" %>
         </div>
   </div>
 </div>

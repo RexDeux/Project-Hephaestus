@@ -1,0 +1,19 @@
+en:
+  item:
+    creation: "O item foi criado com sucesso."
+    empty_spaces: "Por favor preencha os campos vazios"
+    update: "O item foi actualizado."
+    destruction: "O item foi destruído."
+    out_of_stock: "Perdão, o item está fora de stock"
+    added_to_cart: "O Item foi adicionado ao carrinho"
+    error: "Houve um problema ao adicionar o item ao carrinho"
+    
+  user:
+    error: "Ocorreu um erro. Por favor verifique o seu username e password"
+  
+  order:
+    created: 'A ordem foi criada com sucesso|'
+    empty: 'O carrinho de compras encontra-se vazio'
+
+  user:
+    log_out: 'Saída com sucesso'
