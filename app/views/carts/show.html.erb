@@ -1,46 +1,46 @@
 <div class="show-container">
   <div class = "show-main-content">
-    <div class="card-trip">
+    <div class="card-trip_new">
       <h2>Cart show</h2>
       <ul>
       <div class = "show-item">
         <%= link_to dashboard_path do %>
           <button class="effect effect-5" href="#" title="Back">Back</button>
         <% end %>
-        <% @cart.line_items.each do |line_item| %>
-          <div class = "item-textbox">
-          <div class="item-image">
-              <%= image_tag(line_item.item.image) %>
-          </div>
-          <h1><%=item_name = Item.find(line_item.item_id)&.item_name %></h1>
-          <p><%= item_descripton = Item.find(line_item.item_id)&.description %></p>
-          <hr>
-          Price: <%= number_to_currency(line_item.item.price, unit: "€") %>
-          Quantity: <%= line_item.quantity %>/ Total Price: <%= number_to_currency(line_item.total_price, unit: "€") %>
-          <ul>
-            <li>
-              <%=  button_to "Add one", line_item_add_url(line_item), method: :post %>
-              <% if line_item.quantity > 1 %>
-                <%=  button_to "Reduce one", line_item_reduce_url(line_item), method: :post %>
-              <% end %>
-            </li>
-            <li>
-              <%= form_for line_item, method: :delete do |f| %>
-                <%= f.submit "Delete Cart" %>
-              <% end %> 
-            </li>
-          </ul>
+        <% current_user.cart.line_items.each do |line_item| %>
+            <div class = "item-textbox_new">
+            <div class="item-image">
+                <%= image_tag(line_item.item.image) %>
+            </div>
+            <h1><%=item_name = Item.find(line_item.item_id)&.item_name %></h1>
+            <p><%= item_descripton = Item.find(line_item.item_id)&.description %></p>
+            <hr>
+            Price: <%= number_to_currency(line_item.item.price, unit: "€") %>
+            Quantity: <%= line_item.quantity %>/ Total Price: <%= number_to_currency(line_item.total_price, unit: "€") %>
+            <ul>
+              <li>
+                <%=  button_to "Add one", line_item_add_url(line_item), method: :post, class: "buy-button"  %>
+                <% if line_item.quantity > 1 %>
+                  <%=  button_to "Reduce one", line_item_reduce_url(line_item), method: :post , class: "buy-button" %>
+                <% end %>
+              </li>
+              <li>
+                <%= form_for line_item, method: :delete do |f| %>
+                  <%= f.submit "Delete Cart" , class: "buy-button" %>
+                <% end %> 
+              </li>
+            </ul>
           </div>
         <% end %>
       </div>
       </ul>
       <div class="stock_price">
-      Sub total: <%= number_to_currency(@cart.sub_total, unit: "€") %>
+      Sub total: <%= number_to_currency(current_user.cart.sub_total, unit: "€") %>
       </div>  
-      <%= link_to "Proceed to checkout", new_order_path, method: :get %><br>
+      <%= link_to "Proceed to checkout", new_order_path, method: :get , class: "buy-button" %><br>
 
-      <%= form_for @cart, method: :delete do |f| %>
-        <%= f.submit "Delete Cart" %>
+      <%= form_for current_user.cart, method: :delete do |f| %>
+        <%= f.submit "Delete Cart" , class: "buy-button" %>
       </div>
       <% end %> 
   </div>

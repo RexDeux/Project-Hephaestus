@@ -1,29 +1,30 @@
 <div class="show-container">
-  <div class = "show-main-content">
-  <div class="card-trip">
-    <div class="new-container">
-      <div class="new-main-content" >
-        <div class="new-form">
-          <div class="new-header">
-          <h2>List an Item</h2>
+  <div class="show-main-content">
+    <div class="card-trip">
+      <div class="new-container">
+        <div class="new-main-content">
+          <div class="new-form">
+            <div class="new-header">
+              <h2>List an Item</h2>
+            </div>
+            <h1>Adicione um artigo para venda</h1>
+            <%= simple_form_for @item do |f| %>
+              <%= f.input :item_name, placeholder: "Nome do artigo" %>
+              <%= f.input :description, placeholder: "Descrição do artigo" %>
+              <%= f.input :price %>
+              <%= f.input :quantity %>
+              <%= f.input :image, as: :file %>
+              <button type="button" class="signup-btn">
+                <%= f.submit "Submit item", class: "btn btn-primary" %>
+              </button>
+            <% end %>
+            <div class="dashboard-link">
+              <%= link_to("Página Principal", dashboard_path) %>
+            </div>
           </div>
-        <h1>Adicione um artigo para venda</h1>
-          <%= simple_form_for @item do |f| %>
-            <%= f.input :item_name, placeholder: "Nome do artigo" %>
-            <%= f.input :description, placeholder: "Descrição do artigo" %>
-            <%= f.input :price %>
-            <%= f.input :quantity %>
-            <%= f.input :image, as: :file %>
-            <button type="button" class="signup-btn">
-            <%= f.submit "Submit item", class: "btn btn-primary" %>
-            </button>
-          <% end %>
-          <div class="dashboard-link">
-            <%= link_to("Página Principal", dashboard_path) %>
-          </div>
-        </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+

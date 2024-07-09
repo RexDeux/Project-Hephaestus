@@ -20,10 +20,8 @@
                 <p><%=  "#{@item.quantity} left in stock"%></p>
               <% end %>
           </div>
-          <div class="buy-button">
-          <%= button_to "Add to cart", line_items_path(item_id: @item.id), method: :post %>
-          <%= button_to "See cart", cart_path(@current_cart), method: :get %>
-          </div>
+          <%= link_to "Add to cart", line_items_path(item_id: @item.id), method: :post, class: "buy-button" %>
+          <%= link_to "See cart", cart_path(current_user.cart), method: :get, class: "buy-button" %>
         </div>
   </div>
 </div>

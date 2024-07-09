@@ -1,21 +1,23 @@
-<%= form_for(@order) do |f| %>
-  <p>
-    <%= f.label :name %><br>
-    <%= f.text_field :name, required: true, autofocus: true %>
-  </p>
-  <p>
-    <%= f.label :email %><br>
-    <%= f.email_field :email %>
-  </p>
-  <p>
-    <%= f.label :address %><br>
-    <%= f.text_area :address %>
-  </p>
-  <p>
-    <%= f.label :pay_method %><br>
-    <%= f.text_area :pay_method %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+<div class="form-container">
+  <%= form_for(@order, html: { class: "order-form" }) do |f| %>
+    <div class="form-group">
+      <%= f.label :name, class: "form-label" %>
+      <%= f.text_field :name, required: true, autofocus: true, class: "form-input" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :email, class: "form-label" %>
+      <%= f.email_field :email, class: "form-input" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :address, class: "form-label" %>
+      <%= f.text_area :address, class: "form-input" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :pay_method, class: "form-label" %>
+      <%= f.text_field :pay_method, class: "form-input", placeholder: "Card number, expiration date, CVC" %>
+    </div>
+    <div class="form-group">
+      <%= f.submit class: "form-submit" %>
+    </div>
+  <% end %>
+</div>

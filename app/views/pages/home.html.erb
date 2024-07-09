@@ -1,14 +1,41 @@
-<div class="body-home-div">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Handmade Products</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Link to your custom CSS file -->
+</head>
+<body>
+  <header class="header">
+    <nav class="navbar">
+      <h1 class="logo">Your Logo</h1>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <% if logged_in? %>
+          <li><%= link_to "Browse", dashboard_path, class: 'btn btn-flat' %></li>
+        <% else %>
+          <li><%= link_to 'Sign Up', new_user_path, class: 'btn btn-flat' %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </header>
 
-  <div id="blob" class="position-absolute" style="top: -2%;"></div>
-
+  <div class="body-home-div">
+    <div id="blob" class="position-absolute" style="top: -2%;"></div>
     <div class="content-text-home-landing-parent">
       <h3 class="neonText">Handmade</h3>
-      <p class="fw-light neonText"> Produtos Artesanais com Gosto</p>~
-    <% if logged_in? %>
-      <%= link_to "Browse", dashboard_path, class: 'btn btn-flat' %>
-    <% else %>
-      <% %>
-      <%= link_to 'Sign Up', new_user_path %>
-     <% end %>
+      <p class="fw-light neonText">Produtos Artesanais com Gosto</p>
+      <% if logged_in? %>
+        <%= link_to "Browse", dashboard_path, class: 'btn btn-flat' %>
+      <% else %>
+        <%= link_to 'Sign Up', new_user_path, class: 'btn btn-flat' %>
+      <% end %>
     </div>
+  </div>
+
+  <!-- Other sections of your landing page -->
+
+</body>
+</html>

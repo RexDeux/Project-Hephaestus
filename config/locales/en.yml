@@ -53,3 +53,6 @@ en:
   order:
     created: 'Order was successfully created'
     empty_cart: 'Your cart is empty.'
+
+  user:
+    log_out: 'Logged out successfully'

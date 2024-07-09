@@ -45,7 +45,7 @@ gem 'image_processing', '~> 1.2'
 gem "bootsnap", require: false
 gem 'simple_form'
 gem 'bcrypt'
-
+gem 'stripe'
 # Use Sass to process CSS
 # gem "sassc-rails"
 
